@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Visualize RGB-D with Rerun",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/rerun_rgbd_visualization.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--depth_file",
+                "${workspaceFolder}/v1.3_data/2024-09-10_08-12-30.810_measurement_calibration_part1/mono_depth/Depth_G_Infer/depth/40298_1725948827_905821192.npy",
+                "--image_or_video",
+                "${workspaceFolder}/v1.3_data/2024-09-10_08-12-30.810_measurement_calibration_part1/sync_rgb/40298_1725948827_905821192.jpeg",
+                "--output_dir",
+                "${workspaceFolder}/output/rerun_visualize",
+                "--depth_scaling",
+                "25.5",
+                "--invert_depth",
+                "--interactive"
+            ]
+        }
+    ]
+}

@@ -2,7 +2,7 @@
 export CUDA=0
 
 export CHECKPOINT_DIR="jingheya/lotus-depth-g-v2-0-disparity"
-export OUTPUT_DIR="output/Depth_G_Infer"
+export OUTPUT_DIR="/data/2024-09-10_08-12-30.810_measurement_calibration_part1/mono_depth/Depth_G_Infer"
 export TASK_NAME="depth"
 
 # export CHECKPOINT_DIR="jingheya/lotus-normal-g-v1-0"
@@ -12,7 +12,7 @@ export TASK_NAME="depth"
 # export MODE="regression"
 export MODE="generation"
 
-export TEST_IMAGES="assets/in-the-wild_example"
+export TEST_IMAGES="/data/2024-09-10_08-12-30.810_measurement_calibration_part1/sync_rgb/"
 
 CUDA_VISIBLE_DEVICES=$CUDA python infer.py \
         --pretrained_model_name_or_path=$CHECKPOINT_DIR \
@@ -23,5 +23,5 @@ CUDA_VISIBLE_DEVICES=$CUDA python infer.py \
         --task_name=$TASK_NAME \
         --mode=$MODE \
         --output_dir=$OUTPUT_DIR \
-        --disparity 
-        # --processing_res=0 # Defualt: 768. To obtain more fine-grained results, you can set `--processing_res=0` (original resolution) or a higher resolution. 
+        --disparity
+        # --processing_res=0 # Defualt: 768. To obtain more fine-grained results, you can set `--processing_res=0` (original resolution) or a higher resolution.
